@@ -11,7 +11,7 @@ class Aluno(db.Model):
     curso=db.Column(db.String(40),nullable=False)
 
     lista_matérias_aluno=db.relationship("Turma",secondary=alunos_turmas_tabela,backref="alunos") 
-    # cria referência para a associacao entre alunos e turmas.
+    # cria referência para a associacao entre alunos e turmas
     
     boletim_aluno=db.relationship("Boletin",uselist=False,back_populates="alunos")
-    # relacao 1-to-1 com boletins, tá certo?
+    # relacao 1-to-1 com boletins
